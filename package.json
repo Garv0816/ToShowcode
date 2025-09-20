@@ -1,0 +1,34 @@
+{
+  "name": "react_practise",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garv0816/REACT-.git"
+  },
+  "author": "garv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Garv0816/REACT-/issues"
+  },
+  "homepage": "https://github.com/Garv0816/REACT-#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "reacr": "^1.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "broweserslist": [
+    "last 2 Chrome version",
+    "last 2 Firefox version"
+  ]
+
+
+}
