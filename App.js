@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { useState,useEffect } from "react";
 
 
 const Header = () =>{
@@ -21,31 +22,47 @@ const Header = () =>{
     )
 }
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+    
+
+
+    const {resData} = props;
+    console.log("res data->",resData[0])
     return(
         <div className="res-card">
-            <img className = "res-logo "src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/9e14fd7c-0bd4-4f06-86c4-db169bf00998_21239.jpg" />
-            <h3>Meghana Food</h3>
-            <h4>Indian , Biriyani , Chinese</h4>
-            <h4>Rating 4.4 star</h4>
-            <h4>Price : $20</h4>
+            {/* <img className = "res-logo "src={resData?.image?.url} /> */}
+            <h3>{resData?.name}</h3>
+            <h1>my name is gullu</h1>
+           
+            
         </div>
     )
 
 }
 
+
+
 const Body =()=> {
+   
+
+const [resListData,setRestListData]=useState([])
+
+useEffect(()=>{
+    let resList = fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.40980&lng=77.31000&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+.then((res)=>res.json())
+.then((data)=>{ setRestListData(data?.data.cards)})
+console.log("hello i am hemant")
+},[])
+console.log("hello i am gullu")
+console.log("testing",resListData)
     return (
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard />
-                 <RestaurantCard />
-                  <RestaurantCard />
-                   <RestaurantCard />
-                    <RestaurantCard />
-                    <RestaurantCard />
-                    <RestaurantCard />
+                <RestaurantCard 
+                resData = {resListData}
+                />
+                 
 
             </div>
         </div>
