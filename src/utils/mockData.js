@@ -6,7 +6,7 @@ const resList = [
     priceRange: "$$",
     price: 345,
     deliveryTime: "30-40 min",
-    rating: 4.5,
+    rating: 3.2,
     imageId: "cld-sample-4.jpg",
   },
   {
