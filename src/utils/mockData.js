@@ -1,3 +1,6 @@
+// Base URL for Cloudinary
+const CLOUDINARY_URL = "https://res.cloudinary.com/demo/image/upload/";
+
 const resList = [
   {
     id: 1,
@@ -7,7 +10,7 @@ const resList = [
     price: 345,
     deliveryTime: "30-40 min",
     rating: 3.2,
-    imageId: "cld-sample-4.jpg",
+    imageId: "v1727177110/indian-food.jpg",
   },
   {
     id: 2,
@@ -17,7 +20,7 @@ const resList = [
     price: 410,
     deliveryTime: "25-35 min",
     rating: 4.3,
-    imageId: "cld-sample-5.jpg",
+    imageId: "v1727177110/pasta.jpg",
   },
   {
     id: 3,
@@ -27,7 +30,7 @@ const resList = [
     price: 580,
     deliveryTime: "40-50 min",
     rating: 4.8,
-    imageId: "cld-sample-6.jpg",
+    imageId: "v1727177110/sushi.jpg",
   },
   {
     id: 4,
@@ -37,7 +40,7 @@ const resList = [
     price: 220,
     deliveryTime: "20-30 min",
     rating: 4.1,
-    imageId: "cld-sample-7.jpg",
+    imageId: "v1727177110/burger.jpg",
   },
   {
     id: 5,
@@ -47,7 +50,7 @@ const resList = [
     price: 190,
     deliveryTime: "25-35 min",
     rating: 4.4,
-    imageId: "cld-sample-8.jpg",
+    imageId: "v1727177110/taco.jpg",
   },
   {
     id: 6,
@@ -57,7 +60,7 @@ const resList = [
     price: 340,
     deliveryTime: "30-40 min",
     rating: 4.2,
-    imageId: "cld-sample-9.jpg",
+    imageId: "v1727177110/chinese.jpg",
   },
   {
     id: 7,
@@ -67,7 +70,7 @@ const resList = [
     price: 270,
     deliveryTime: "20-30 min",
     rating: 4.0,
-    imageId: "cld-sample-10.jpg",
+    imageId: "v1727177110/salad.jpg",
   },
   {
     id: 8,
@@ -77,7 +80,7 @@ const resList = [
     price: 590,
     deliveryTime: "35-45 min",
     rating: 4.7,
-    imageId: "cld-sample-11.jpg",
+    imageId: "v1727177110/bbq.jpg",
   },
   {
     id: 9,
@@ -87,7 +90,7 @@ const resList = [
     price: 275,
     deliveryTime: "20-30 min",
     rating: 4.3,
-    imageId: "cld-sample-12.jpg",
+    imageId: "v1727177110/pizza.jpg",
   },
   {
     id: 10,
@@ -97,7 +100,7 @@ const resList = [
     price: 185,
     deliveryTime: "25-35 min",
     rating: 4.5,
-    imageId: "cld-sample-13.jpg",
+    imageId: "v1727177110/shawarma.jpg",
   },
   {
     id: 11,
@@ -107,7 +110,7 @@ const resList = [
     price: 310,
     deliveryTime: "30-40 min",
     rating: 4.2,
-    imageId: "cld-sample-14.jpg",
+    imageId: "v1727177110/curry.jpg",
   },
   {
     id: 12,
@@ -117,7 +120,7 @@ const resList = [
     price: 360,
     deliveryTime: "30-40 min",
     rating: 4.6,
-    imageId: "cld-sample-15.jpg",
+    imageId: "v1727177110/pho.jpg",
   },
   {
     id: 13,
@@ -127,7 +130,7 @@ const resList = [
     price: 200,
     deliveryTime: "20-25 min",
     rating: 4.4,
-    imageId: "cld-sample-16.jpg",
+    imageId: "v1727177110/dosa.jpg",
   },
   {
     id: 14,
@@ -137,7 +140,7 @@ const resList = [
     price: 425,
     deliveryTime: "30-35 min",
     rating: 4.3,
-    imageId: "cld-sample-17.jpg",
+    imageId: "v1727177110/kebab.jpg",
   },
   {
     id: 15,
@@ -147,7 +150,7 @@ const resList = [
     price: 160,
     deliveryTime: "15-25 min",
     rating: 4.6,
-    imageId: "cld-sample-18.jpg",
+    imageId: "v1727177110/pancake.jpg",
   },
   {
     id: 16,
@@ -157,7 +160,7 @@ const resList = [
     price: 245,
     deliveryTime: "20-30 min",
     rating: 4.1,
-    imageId: "cld-sample-19.jpg",
+    imageId: "v1727177110/wrap.jpg",
   },
   {
     id: 17,
@@ -167,7 +170,7 @@ const resList = [
     price: 465,
     deliveryTime: "30-40 min",
     rating: 4.7,
-    imageId: "cld-sample-20.jpg",
+    imageId: "v1727177110/ramen.jpg",
   },
   {
     id: 18,
@@ -177,7 +180,7 @@ const resList = [
     price: 150,
     deliveryTime: "15-20 min",
     rating: 4.5,
-    imageId: "cld-sample-21.jpg",
+    imageId: "v1727177110/waffle.jpg",
   },
   {
     id: 19,
@@ -187,7 +190,7 @@ const resList = [
     price: 335,
     deliveryTime: "25-35 min",
     rating: 4.2,
-    imageId: "cld-sample-22.jpg",
+    imageId: "v1727177110/falafel.jpg",
   },
   {
     id: 20,
@@ -197,8 +200,8 @@ const resList = [
     price: 600,
     deliveryTime: "40-50 min",
     rating: 4.8,
-    imageId: "cld-sample-23.jpg",
+    imageId: "v1727177110/steak.jpg",
   },
 ];
 
-export default resList
+export default resList;
