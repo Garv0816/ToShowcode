@@ -6,14 +6,13 @@ import Header from "./component/Header";
 import Body from "./component/Body";
 
 const AppLayout = ()=> {
-        return (
-            <div className="app">
-              
-                < Header />
-                < Body />
+     return (
+        <div className="app">
+            <Header />
+            <Body />
 
-            </div>
-        )
+        </div>
+     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

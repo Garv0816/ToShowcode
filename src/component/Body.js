@@ -1,7 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
 
 
 
@@ -23,14 +22,15 @@ const fetchData = async () => {
 
     const json = await data.json();
     console.log(json);
-    setresData((json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants))
+    setresData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+
 
   } catch (error) {
     console.error("Fetch failed:", error);
   }
 };
  
-    return resData.length === 0 ? <Shimmer /> : (
+    return(
         <div className="body">
             
             <div className="filter">
@@ -54,8 +54,8 @@ const fetchData = async () => {
                    
             </div>
             <div className="res-container">
-                {resData.map((restaurant) => (
-                    <RestaurantCard key={restaurant.id} resData={restaurant}/>
+                {resData.map((restaurant, index) => (
+                    <RestaurantCard key={index} resData={restaurant}/>
                 ))} 
             </div>
         </div>

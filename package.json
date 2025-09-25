@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "DWeJWGVx0ecvttSGlJTI",
-    // "start" : "",
-    // "build": "parcel build ./src/index.html/"
+    "test": "DWeJWGVx0ecvttSGlJTI"
   },
   "repository": {
     "type": "git",
@@ -20,5 +18,9 @@
   "homepage": "https://github.com/Garv0816/ToShowcode#readme",
   "devDependencies": {
     "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }
