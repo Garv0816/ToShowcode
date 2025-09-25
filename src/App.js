@@ -7,7 +7,7 @@ import Body from "./component/Body";
 
 const AppLayout = ()=> {
         return (
-            <div className ="app">
+            <div className="app">
               
                 < Header />
                 < Body />
