@@ -1,12 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 
 
 
 const Body =()=> {
     
-const [resData , setresData]= useState(resList)
+const [resData , setresData]= useState([])
 
 useEffect (()=> {
     fetchData();
@@ -22,7 +21,10 @@ const fetchData = async () => {
 
     const json = await data.json();
     console.log(json);
-    setresData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+    setresData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[4]?.info)
+
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[4]?.info
+)
 
 
   } catch (error) {
@@ -54,7 +56,9 @@ const fetchData = async () => {
                    
             </div>
             <div className="res-container">
-                {resData.map((restaurant, index) => (
+                
+                {Array.isArray(resData) && resData.map(
+                    (restaurant, index) => (
                     <RestaurantCard key={index} resData={restaurant}/>
                 ))} 
             </div>
