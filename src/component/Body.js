@@ -39,7 +39,7 @@ const fetchData = async () => {
                 <button className="filter-btn"     
                 onClick={ () => {
                     const filteredList = resData.filter(
-                        (resData) => resData?.info?.avgRating >4.2
+                        (resData) => resData?.info?.avgRating >4.1
                     );  
                     setresData(filteredList)
                 } 
