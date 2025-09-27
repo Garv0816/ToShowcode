@@ -4,7 +4,7 @@ const RestaurantCard = (props) => {
     
     const {resData} = props;
 
-    console.log("reaoskjjhaf->",resData)
+    // console.log("reaoskjjhaf->",resData)
 
     
     return(

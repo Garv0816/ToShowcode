@@ -13,7 +13,7 @@ useEffect (()=> {
 } , [1])
 
 
-
+ console.log(resData)
 
 const fetchData = async () => {
   try {
@@ -22,7 +22,7 @@ const fetchData = async () => {
     );
 
     let json = await data.json();
-    console.log("json", json)
+    // console.log("json", json)
  
     setresData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     
@@ -53,10 +53,18 @@ if (resData.length === 0)
                 }></input>
                     <button onClick={()=>{
                         console.log(searchText)
+                        console.log("resdata->",resData);
+                        console.log("redadata inner=",resData[0].info?.name)
                         const filteredData = resData.filter(
-                            (res) => res.resData?.info?.name.includes(searchText)
+                        (rest) => rest.info?.name==(searchText)
+                        
+                    
                         );
+                        console.log(searchText)
+                       
                         setresData(filteredData)
+                       
+                        
                     }}>Search</button> 
                 </div>
 

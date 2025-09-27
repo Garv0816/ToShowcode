@@ -1,5 +1,6 @@
 import { CDN_LOGO } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Header = () =>{
@@ -15,9 +16,9 @@ const [login ,setLogin] = useState("Login")
            
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact us</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to= "/About">About</Link></li>
+                    <li><Link to="/Contact">Contact us</Link></li>
                     <li>Cart</li>
                 </ul>
 
