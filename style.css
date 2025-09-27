@@ -174,7 +174,7 @@ body {
 /* ------------------ Shimmer Loading Effect ------------------ */
 .shimmer {
   background: linear-gradient(90deg, #f0f0f0 25%, #e6e6e6 37%, #f0f0f0 63%);
-  background-size: 400% 100%;
+  background-size: 800% 100%;
   animation: shimmer 1.2s ease-in-out infinite;
 }
 
@@ -278,7 +278,7 @@ body {
 }
 
 .fake-button {
-  padding: 8px 12px;
+  padding: 8px 8px;
   background-color: #ff6347;
   color: #fff;
   border-radius: 6px;
@@ -298,4 +298,72 @@ body {
 
 .fake-button:hover {
   opacity: 0.9;
+}
+
+
+/* <shimmer > ========================== */
+
+/* Wrapper for shimmer cards */
+.shimmer-cards {
+  width: 300px;
+  height: 350px;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-btn {
+  
+  background-color: #e74c3c; /* Red for logout */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
 }

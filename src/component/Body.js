@@ -1,15 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
-
+import Shimmer from "./Shimmer";
 
 
 const Body =()=> {
     
 const [resData , setresData]= useState([])
+const [searchText ,  setsearchText] = useState("")
 
 useEffect (()=> {
     fetchData();
 } , [1])
+
 
 
 
@@ -31,11 +33,33 @@ const fetchData = async () => {
     console.log("Fetch failed:", error);
   }
 };
+
+if (resData.length === 0)
+    {
+       return <Shimmer />
+    }
+
+
  
     return(
         <div className="body">
             
             <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{setsearchText(e.target.value)}
+                    
+
+                
+                }></input>
+                    <button onClick={()=>{
+                        console.log(searchText)
+                        const filteredData = resData.filter(
+                            (res) => res.resData?.info?.name.includes(searchText)
+                        );
+                        setresData(filteredData)
+                    }}>Search</button> 
+                </div>
+
                 <button className="filter-btn"     
                 onClick={ () => {
                     const filteredList = resData.filter(
@@ -50,6 +74,8 @@ const fetchData = async () => {
 
                 </button>                 
             </div>
+
+            
             <div className="res-container">
                 
                 {Array.isArray(resData) && resData.map(
