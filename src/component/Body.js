@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body =()=> {
@@ -35,13 +35,12 @@ const fetchData = async () => {
   }
 };
 
-if (resData.length === 0)
-    {
-       return <Shimmer />
-    }
 
 
- 
+const online = useOnlineStatus();
+if(online === false){
+    return(<h1>Seems You are Offline check Your Internet connection</h1>)
+}
     return(
         <div className="body">
             
