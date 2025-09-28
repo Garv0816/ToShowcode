@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body =()=> {
@@ -22,7 +23,7 @@ const fetchData = async () => {
     );
 
     let json = await data.json();
-    // console.log("json", json)
+    console.log("json", json)
  
     setresData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     
@@ -56,7 +57,7 @@ if (resData.length === 0)
                         console.log("resdata->",resData);
                         console.log("redadata inner=",resData[0].info?.name)
                         const filteredData = resData.filter(
-                        (rest) => rest.info?.name==(searchText)
+                        (rest) => rest.info?.name.includes(searchText)
                         
                     
                         );
@@ -88,7 +89,7 @@ if (resData.length === 0)
                 
                 {Array.isArray(resData) && resData.map(
                     (restaurant, index) => (
-                    <RestaurantCard key={index} resData={restaurant}/>
+                   < RestaurantCard key={index} resData={restaurant}/> 
                 ))} 
             </div>
         </div>
