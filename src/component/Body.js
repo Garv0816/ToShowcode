@@ -1,6 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 
@@ -44,14 +43,14 @@ if(online === false){
     return(
         <div className="body">
             
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{setsearchText(e.target.value)}
+            <div className="flex">
+                <div className="">
+                    <input type="text" className=" my-3  border-2 bg-red-30" value={searchText} onChange={(e)=>{setsearchText(e.target.value)}
                     
 
                 
                 }></input>
-                    <button onClick={()=>{
+                    <button className="border-2 hover:bg-pink-100  " onClick={()=>{
                         console.log(searchText)
                         console.log("resdata->",resData);
                         console.log("redadata inner=",resData[0].info?.name)
@@ -68,7 +67,7 @@ if(online === false){
                     }}>Search</button> 
                 </div>
 
-                <button className="filter-btn"     
+                <button className="bg-amber-200 mx-5 my-3 border-2 cursor-pointer"     
                 onClick={ () => {
                     const filteredList = resData.filter(
                         (resData) => resData?.info?.avgRating >4.1
@@ -84,10 +83,11 @@ if(online === false){
             </div>
 
             
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 
                 {Array.isArray(resData) && resData.map(
                     (restaurant, index) => (
+                        
                    < RestaurantCard key={index} resData={restaurant}/> 
                 ))} 
             </div>

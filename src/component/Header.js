@@ -9,26 +9,26 @@ const [login ,setLogin] = useState("Login")
 const onlineStatus = useOnlineStatus()
 
     return(
-        <div className="header">
+        <div className="flex">
             
-            <div className="logo-container">
+            <div className="w-45">
             <img className="logo"src= {CDN_LOGO}></img>
             </div>
 
            
-            <div className="nav-items">
-                <ul>
-                    <li>
+            <div className="bg-pink-200 content-center w-full space-x-5 flex  justify-center">
+                <ul className=" pink flex space-x-5">
+                    <li className="  content-center ">
                         Online Status : {onlineStatus ? "✅" : "⭕"}
                     </li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to= "/About">About</Link></li>
-                    <li><Link to="/Contact">Contact us</Link></li>
-                    <li>Cart</li>
+                    <li className="content-center "><Link to="/">Home</Link></li>
+                    <li className="content-center"><Link to= "/About">About</Link></li>
+                    <li className="content-center"><Link to="/Contact">Contact us</Link></li>
+                    <li className="content-center">Cart</li>
                 </ul>
 
             </div>
-             <button className = "login-btn"
+             <button className = "flex items-center justify-center px-6 py-3 bg-red-400 hover:bg-red-500 text-white font-semibold rounded-md shadow-md transition duration-300 ease-in-out"
              onClick={()=> {
                 login == "Login"
                 ? setLogin("Logout")
