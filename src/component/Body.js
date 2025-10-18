@@ -1,12 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { WithPromotedCard } from "./RestaurantCard";
 
 
 const Body =()=> {
     
 const [resData , setresData]= useState([])
 const [searchText ,  setsearchText] = useState("")
+
+const RestanurantWithPromoted = WithPromotedCard(RestaurantCard)
 
 useEffect (()=> {
     fetchData();
@@ -18,7 +21,7 @@ useEffect (()=> {
 const fetchData = async () => {
   try {
     const data = await fetch(
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.40980&lng=77.31000&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.57590&lng=77.33450&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     let json = await data.json();
@@ -27,7 +30,7 @@ const fetchData = async () => {
     setresData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     
 
-  
+
 
   } catch (error) {
     console.log("Fetch failed:", error);
@@ -87,8 +90,11 @@ if(online === false){
                 
                 {Array.isArray(resData) && resData.map(
                     (restaurant, index) => (
+                    // render restaurant which have promoted restaurant 
+
+                    < RestaurantCard key={index} resData={restaurant}/> 
+   
                         
-                   < RestaurantCard key={index} resData={restaurant}/> 
                 ))} 
             </div>
         </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-    
+
     const {resData} = props;
 
     console.log("reaoskjjhaf->",resData)
@@ -31,6 +31,18 @@ const RestaurantCard = (props) => {
         </div>
 
     )
+
+}
+
+
+export const WithPromotedCard =  (RestaurantCard)=>{
+    return () =>{
+        <div>
+            <label>Promoted</label>
+            <RestaurantCard />
+        </div>
+    }
+
 
 }
 

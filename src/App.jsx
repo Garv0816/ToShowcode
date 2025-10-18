@@ -10,14 +10,18 @@ import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
 import Header from "./component/Header";
 import Body from "./component/Body";
 import RestaurantMenu from "./component/RestaurantMenu";
+import {Provider} from "react-redux"
+import appStore from "./utils/appStore";
 
 const AppLayout = ()=> {
      return (
+        <Provider store={appStore}>
         <div className="app">
             <Header />
             <Outlet />
 
         </div>
+        </Provider>
      )
 }
 
